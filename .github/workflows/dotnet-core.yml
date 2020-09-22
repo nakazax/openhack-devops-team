@@ -16,13 +16,13 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.301
+        dotnet-version: 2.2.103
     - name: Install dependencies
       run: dotnet restore
       working-directory: ${{env.working-directory}}
     - name: Build
       run: dotnet build --configuration Release --no-restore
       working-directory: ${{env.working-directory}}
-    - name: IntegrationTest
-      run: dotnet test tests/IntegrationTest --no-restore --verbosity normal
+    - name: UnitTests
+      run: dotnet test tests/UnitTests --no-restore --verbosity normal
       working-directory: ${{env.working-directory}}
