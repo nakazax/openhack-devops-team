@@ -23,6 +23,6 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
       working-directory: ${{env.working-directory}} 
-    - name: Test
-      run: dotnet test --verbosity normal
+    - name: UnitTest
+      run: dotnet test tests/UnitTests --no-restore --verbosity normal
       working-directory: ${{env.working-directory}} 
